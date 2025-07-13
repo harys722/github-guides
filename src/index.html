@@ -12,59 +12,167 @@
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="GitHub Guides">
     <meta itemprop="description" content="Learn more about GitHub & GitHub pages as a developer.">
-    <meta itemprop="image" content="https://harys722.github.io/github-guides/src/media/logo.png">
+    <meta itemprop="image" content="https://harys722.github.io/github-guides/media/logo.png">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://harys722.github.io/github-guides/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="GitHub Guides">
     <meta property="og:description" content="Learn more about GitHub & GitHub pages as a developer.">
-    <meta property="og:image" content="https://harys722.github.io/github-guides/src/media/logo.png">
+    <meta property="og:image" content="https://harys722.github.io/github-guides/media/logo.png">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GitHub Guides">
     <meta name="twitter:description" content="Learn more about GitHub & GitHub pages as a developer.">
-    <meta name="twitter:image" content="https://harys722.github.io/github-guides/src/media/logo.png">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" title="docsify-darklight-theme" type="text/css">
+    <meta property="twitter:image" content="https://harys722.github.io/github-guides/media/logo.png">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
-  </head>
 
-  <body>
-    <noscript>This page requires JavaScript to work, please enable it or read <a href="https://github.com/harys722/github-guides">here</a>.</noscript>
+    <!-- Theme Stylesheets - Default to light theme -->
+    <link id="theme-light" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+    <link id="theme-dark" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" disabled>
+
+    <!-- Custom styles for theme toggle -->
+    <style>
+      .theme-toggle {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 1000;
+        background: var(--theme-color, #42b983);
+        border: none;
+        border-radius: 25px;
+        width: 60px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        font-weight: 500;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      
+      .theme-toggle:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      }
+      
+      .theme-toggle:active {
+        transform: translateY(0);
+      }
+      
+      
+      .cover .theme-toggle {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+      }
+      
+      .github-corner {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        z-index: 999 !important;
+      }
+      
+      * {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      @media (max-width: 768px) {
+        .theme-toggle {
+          top: 70px;
+          right: 15px;
+          width: 50px;
+          height: 25px;
+          font-size: 12px;
+        }
+        
+        .cover .theme-toggle {
+          top: 70px;
+          right: 15px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <noscript>This page requires JavaScript to work, please enable it or read the list <a href="https://github.com/wdhdev/free-for-life#readme">here</a>.</noscript>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span id="themeIcon">Dark</span>
+    </button>
 
     <div id="app">Loading...</div>
 
     <script>
-      window.$docsify = {
-        name: "GitHub Guides",
-        repo: "harys722/github-guides",
-        search: ["/"],
-        alias: {
-          "/": "https://raw.githubusercontent.com/harys722/github-guides/main/README.md",
-        },
-        darklightTheme: {
-          siteFont : "Source Sans Pro, Helvetica Neue",
-          defaultTheme : "dark",
-          codeFontFamily : "Roboto Mono, Monaco, courier, monospace",
-          bodyFontSize: "15px"
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const lightTheme = document.getElementById('theme-light');
+        const darkTheme = document.getElementById('theme-dark');
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            enableDarkTheme();
+        } else {
+            enableLightTheme();
         }
-      }
+        
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('dark-theme')) {
+                enableLightTheme();
+            } else {
+                enableDarkTheme();
+            }
+        });
+        
+        function enableDarkTheme() {
+            lightTheme.disabled = true;
+            darkTheme.disabled = false;
+            document.body.classList.add('dark-theme');
+            themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        function enableLightTheme() {
+            lightTheme.disabled = false;
+            darkTheme.disabled = true;
+            document.body.classList.remove('dark-theme');
+            themeIcon.textContent = '🔆';
+            localStorage.setItem('theme', 'light');
+        }
+
+        window.$docsify = {
+            name: "GitHub Guides",
+            repo: "harys722/github-guides",
+            coverpage: true,
+            search: ["/"],
+            alias: {
+                "/": "https://raw.githubusercontent.com/harys722/github-guides/main/README.md"
+            },
+            plugins: [
+                function(hook, vm) {
+                    hook.doneEach(function() {
+                        const toggle = document.getElementById('themeToggle');
+                        if (toggle) {
+                            toggle.style.display = 'flex';
+                        }
+                    });
+                }
+            ]
+        }
     </script>
 
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript"></script>
-
-    <style>
-      blockquote:first-of-type {
-        background-color: rgba(255, 215, 0, 0.2);
-      }
-    </style>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+</body>
 </html>
