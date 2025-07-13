@@ -1,7 +1,6 @@
 <div align="center">
-  <a href="#">
-    <img src="https://harys722.github.io/github-guides/media/logo.png" alt="Logo" width="120" height="120">
-  </a>
+    <img src="https://gh-guides.rweb.site/media/logo.png" alt="Logo" width="120" height="120">
+
 
   <h1 align="center">GitHub Guides</h1>
 
