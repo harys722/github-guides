@@ -1,3 +1,5 @@
+<!-- markdownlint-disable first-line-h1 -->
+
 <img src="https://gh-guides.rweb.site/media/logo.png" alt="GitHub Guides Logo" width="120" height="120" :no-zoom>
 
 # GitHub Guides
