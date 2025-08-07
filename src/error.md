@@ -4,14 +4,11 @@
 
 [Go back to Home](https://gh-guides.rweb.site/)
 
-In the meantime why not play a little game? Here, let's see how many times you can click the below button. 
+In the meantime why not play a little game? Here, let's see how many times you can click the below button. Warning: your progess will not be saved!
+
 
 <button-counter></button-counter>
 
-
-
-> [!WARNING]
-> Your progress will not be saved.
 
 ---
 
