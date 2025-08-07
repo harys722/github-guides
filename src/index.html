@@ -151,26 +151,40 @@
         }
 
         window.$docsify = {
-            name: "GitHub Guides",
-            repo: "harys722/github-guides",
-            coverpage: 'coverpage.md',
-            notFoundPage: 'error.md',
-            search: ["/"],
-            themeColor: "#FFD700",
-            alias: {
-                "/": "https://raw.githubusercontent.com/harys722/github-guides/main/README.md"
+          name: "GitHub Guides",
+          repo: "harys722/github-guides",
+          coverpage: 'coverpage.md',
+          notFoundPage: 'error.md',
+          search: ["/"],
+          themeColor: "#FFD700",
+          alias: {
+            "/": "https://raw.githubusercontent.com/harys722/github-guides/main/README.md"
+          },
+          vueComponents: {
+            'button-counter': {
+              template: `
+              <button @click="count += 1">
+              You clicked me {{ count }} times
+              </button>
+              `,
+              data() {
+                return {
+                  count: 0,
+                };
+              },
             },
-            plugins: [
-                function(hook, vm) {
-                    hook.doneEach(function() {
-                        const toggle = document.getElementById('themeToggle');
-                        if (toggle) {
-                            toggle.style.display = 'flex';
-                        }
-                    });
+          },
+          plugins: [
+            function(hook, vm) {
+              hook.doneEach(function() {
+                const toggle = document.getElementById('themeToggle');
+                if (toggle) {
+                  toggle.style.display = 'flex';
                 }
-            ]
-        }
+              });
+            }
+          ]
+        };
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
