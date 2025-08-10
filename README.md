@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://gh-guides.rweb.site/media/logo.png" alt="Logo" width="120" height="120">
+    <img src="https://gh-guides.rweb.site/media/logo.png" alt="Logo" width="120" height="120" :no-zoom>
 
 
   <h1 align="center">GitHub Guides</h1>
@@ -62,6 +62,8 @@ Now that you have the Discord verification TXT string, you need to fork this [re
 
 You can also create your own repository instead of forking this [repository](https://github.com/harys722/.well-known/). To create your own repository, read through GitHub's official guide [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository). The repository name **must** be `. well-known` and must contain the `discord` file with only your Discord verification TXT string content, otherwise the setup will not work properly.
 
+Once you have created the repository and configured everything, now you just need to enable **GitHub Pages**, for that, go to Settings -> Pages -> Branch -> Main -> Save and you are ready to go.
+
 After all, now that your GitHub domain is connected to your Discord profile, shine up your Discord profile with this domain and don't forget to star this repository. 😉
 
 ## Bluesky Custom Handle
@@ -98,6 +100,8 @@ This guide will walk you through the process of setting up your custom username.
 This setup will remain the same as the Discord domain connection guide, but we will mention it again here to prevent incomprehensible issues. Now that you have the Bluesky verification TXT string, you need to fork this [repository](https://github.com/harys722/.well-known/). After forking this repository, go to this `atproto-did` and remove everything and then paste your Bluesky verification string there. Once you paste it, commit the changes to save the file. After doing all these steps, repeat steps 1-5 and press the `Verify DNS Record` button. If it shows an error like `Failed to verify handle. Please try again.`, try waiting a few minutes (sometimes up to 24 hours) as the records may not have propagated yet.
 
 You can also create your own repository instead of forking this [repository](https://github.com/harys722/.well-known/). To create your own repository, read through GitHub's official guide [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository). The repository name **must** be `. well-known` and must contain the `atproto-did` file with only your Bluesky verification TXT string content, otherwise the setup will not work properly.
+
+Once you have created the repository and configured everything, now you just need to enable **GitHub Pages**, for that, go to Settings -> Pages -> Branch -> Main -> Save and you are ready to go.
 
 After all, now that you have setup your custom handle in Bluesky, let your friends know this new handle and don't forget to star this repository. 😉
 
