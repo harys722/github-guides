@@ -23,6 +23,23 @@
 # Welcome to GitHub Guides
 Hey user, welcome to GitHub Guides! Here we'll share practical, step-by-step tutorials and helpful resources on topics. We've got practical tips and resources on GitHub Pages, Discord domain connections, Bluesky custom handles, and GitHub notifications on Discord. Learn how to setup them.
 
+## Google Search Console
+This guide will walk you through the process of connecting your username.github.io domain to the Google Search Console.
+
+1. Open [Google Search Console](http://search.google.com/search-console/) and click **Start Now**. After logging into your Google account, you will then see the page below, type your `username.github.io` domain.
+
+   ![](https://harys722.github.io/github-guides/media/google/search-console/step_1.png)
+
+2. Choose the **HTML file** method, download the provided HTML file by Google and upload it to your GitHub repository's root directory. Click **VERIFY**.
+
+   ![](https://harys722.github.io/github-guides/media/google/search-console/step_2.png)
+
+3. Once you click the **VERIFY** button, your domain will be added to your Google Search Console account.
+
+   ![](https://harys722.github.io/github-guides/media/google/search-console/step_3.png)
+
+Congratulations, your GitHub Pages domain (`username.github.io`) is now added to Google Search Console. Your website may now be available in Google Search. It's more likely if you search directly with the full domain.
+
 ## Discord Domain Connection
 This guide will walk you through the process of connecting your username.github.io domain to your Discord profile.
 
